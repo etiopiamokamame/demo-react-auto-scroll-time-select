@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import Select, { OptionType } from "react-auto-scroll-time-select";
 
 function App() {
