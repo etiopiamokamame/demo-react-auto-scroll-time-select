@@ -9,6 +9,9 @@ import HourLimitProp from "./molecules/HourLimitProp";
 import FindOptionProp from "./molecules/FindOptionProp";
 import IsClearableProp from "./molecules/IsClearableProp";
 import DefaultScrollOptionValueProp from "./molecules/DefaultScrollOptionValueProp";
+import HideOptionsProps from "./molecules/HideOptionsProps";
+import DisabledOptionsProps from "./molecules/DisabledOptionsProps";
+import StartTimeProps from "./molecules/StartTimeProps";
 
 const App = () => {
   return (
@@ -24,6 +27,9 @@ const App = () => {
           <FindOptionProp />
           <IsClearableProp />
           <DefaultScrollOptionValueProp />
+          <HideOptionsProps />
+          <DisabledOptionsProps />
+          <StartTimeProps />
         </Grid>
       </TopAppBarFixedAdjust>
     </div>

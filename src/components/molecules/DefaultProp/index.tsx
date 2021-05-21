@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { Subtitle2, Headline5 } from "@material/react-typography";
 import { Cell, Row } from "@material/react-layout-grid";
-import Select, {
-  OptionType,
-  StyleConfigType,
-} from "react-auto-scroll-time-select";
+import Select, { OptionType } from "react-auto-scroll-time-select";
 
 const DefaultProp = () => {
   const [option, setOption] = useState<OptionType | null>();
@@ -27,16 +24,7 @@ const DefaultProp = () => {
         </Row>
         <Row>
           <Cell columns={6}>
-            <Select
-              onChange={setOption}
-              value={option}
-              styles={{
-                inputForm: (config: StyleConfigType) => ({
-                  ...config,
-                  minWidth: "100%",
-                }),
-              }}
-            />
+            <Select onChange={setOption} value={option} />
           </Cell>
           <Cell columns={6} align="middle">
             {option?.value}

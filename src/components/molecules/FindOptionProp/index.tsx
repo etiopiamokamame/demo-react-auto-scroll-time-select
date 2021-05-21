@@ -4,10 +4,7 @@ import React, { useState } from "react";
 import { Cell, Row } from "@material/react-layout-grid";
 import { Subtitle2, Headline5, Body1 } from "@material/react-typography";
 import TextField, { Input } from "@material/react-text-field";
-import Select, {
-  OptionType,
-  StyleConfigType,
-} from "react-auto-scroll-time-select";
+import Select, { OptionType } from "react-auto-scroll-time-select";
 
 const FindOptionProp = () => {
   const [option, setOption] = useState<OptionType | null>();
@@ -88,12 +85,6 @@ const FindOptionProp = () => {
               onChange={setOption}
               value={option}
               findOption={(option, input) => eval(findOption)(option, input)}
-              styles={{
-                inputForm: (config: StyleConfigType) => ({
-                  ...config,
-                  minWidth: "100%",
-                }),
-              }}
             />
           </Cell>
           <Cell columns={6} align="middle">

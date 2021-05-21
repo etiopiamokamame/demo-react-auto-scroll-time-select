@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { Cell, Row } from "@material/react-layout-grid";
 import { Subtitle2, Headline5, Body1 } from "@material/react-typography";
 import Radio, { NativeRadioControl } from "@material/react-radio";
-import Select, {
-  OptionType,
-  StyleConfigType,
-} from "react-auto-scroll-time-select";
+import Select, { OptionType } from "react-auto-scroll-time-select";
 
 const IsClearableProp = () => {
   const [option, setOption] = useState<OptionType | null>();
@@ -62,12 +59,6 @@ const IsClearableProp = () => {
               key={String(isClearable)}
               isClearable={isClearable}
               onChange={setOption}
-              styles={{
-                inputForm: (config: StyleConfigType) => ({
-                  ...config,
-                  minWidth: "100%",
-                }),
-              }}
             />
           </Cell>
           <Cell columns={6} align="middle">

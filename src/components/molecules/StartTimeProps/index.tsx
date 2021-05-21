@@ -1,38 +1,28 @@
 import React, { useState } from "react";
 import { Cell, Row } from "@material/react-layout-grid";
 import { Subtitle2, Headline5, Body1 } from "@material/react-typography";
-import TextField, { Input } from "@material/react-text-field";
 import Select, { OptionType } from "react-auto-scroll-time-select";
 
-const HourLimitProp = () => {
+const StartTimeProps = () => {
   const [option, setOption] = useState<OptionType | null>();
-  const [hourLimit, setHourLimit] = useState<number>(24);
+  const [startTimeOption, setStartTimeOption] = useState<OptionType | null>();
 
   return (
     <Row>
       <Cell columns={12}>
         <Row>
           <Cell columns={12}>
-            <Headline5>Hour Limit</Headline5>
+            <Headline5>Start Time</Headline5>
           </Cell>
         </Row>
         <Row>
           <Cell columns={12}>
-            <Body1>Set a time limit</Body1>
+            <Body1>Specify the start time</Body1>
           </Cell>
         </Row>
         <Row>
-          <Cell columns={12} align="middle">
-            <TextField label="Hour Limit">
-              <Input
-                type="number"
-                min={1}
-                value={hourLimit || 1}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setHourLimit(parseInt(e.currentTarget.value))
-                }
-              />
-            </TextField>
+          <Cell columns={9} align="middle">
+            <Select onChange={setStartTimeOption} value={startTimeOption} />
           </Cell>
         </Row>
         <Row>
@@ -52,7 +42,7 @@ const HourLimitProp = () => {
             <Select
               onChange={setOption}
               value={option}
-              hourLimit={hourLimit || 1}
+              startTime={startTimeOption?.value}
             />
           </Cell>
           <Cell columns={6} align="middle">
@@ -64,4 +54,4 @@ const HourLimitProp = () => {
   );
 };
 
-export default HourLimitProp;
+export default StartTimeProps;

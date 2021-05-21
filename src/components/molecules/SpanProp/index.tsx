@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { Subtitle2, Headline5, Body1 } from "@material/react-typography";
 import { Cell, Row } from "@material/react-layout-grid";
 import TextField, { Input } from "@material/react-text-field";
-import Select, {
-  OptionType,
-  StyleConfigType,
-} from "react-auto-scroll-time-select";
+import Select, { OptionType } from "react-auto-scroll-time-select";
 
 const SpanProp = () => {
   const [option, setOption] = useState<OptionType | null>();
@@ -50,17 +47,7 @@ const SpanProp = () => {
             </Row>
             <Row>
               <Cell columns={6}>
-                <Select
-                  onChange={setOption}
-                  value={option}
-                  span={span || 1}
-                  styles={{
-                    inputForm: (config: StyleConfigType) => ({
-                      ...config,
-                      minWidth: "100%",
-                    }),
-                  }}
-                />
+                <Select onChange={setOption} value={option} span={span || 1} />
               </Cell>
               <Cell columns={6} align="middle">
                 {option?.value}
