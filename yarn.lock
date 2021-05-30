@@ -11121,10 +11121,10 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
-react-auto-scroll-time-select@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/react-auto-scroll-time-select/-/react-auto-scroll-time-select-2.4.0.tgz#be3bc55751302b25228eaa686d619e08b6898198"
-  integrity sha512-IY4rNfJJMy0rSBs5b4UD6sVKp9zd2dxjuQDyvPEi7NISvyLcfxC4sAx66i63bNC6tSWkRKj6VYMEc7eGSRkrOw==
+react-auto-scroll-time-select@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/react-auto-scroll-time-select/-/react-auto-scroll-time-select-2.4.1.tgz#9a3c997c8c2eb825ce9b7d6356de882e8086a148"
+  integrity sha512-eyN6LVmVGApEShokGKyOmu4KLaZMO/TIYv60GW2+BlntqGyxDoht3Z/vDQaLQsceoGmfeoySUg6JX8p7FKvNkA==
 
 react-custom-scrollbars@^4.2.1:
   version "4.2.1"
