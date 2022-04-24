@@ -8,7 +8,7 @@ const DefaultScrollOptionValueProp = () => {
   const [defaultOption, setDefaultOption] = useState<OptionType | null>();
 
   return (
-    <Row>
+    <Row data-testid="default-scroll-option-value-prop">
       <Cell columns={12}>
         <Row>
           <Cell columns={12}>
@@ -26,7 +26,7 @@ const DefaultScrollOptionValueProp = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={12} align="middle">
+          <Cell columns={12} align="middle" data-testid="default-select">
             <Select onChange={setDefaultOption} value={defaultOption} />
           </Cell>
         </Row>
@@ -43,14 +43,14 @@ const DefaultScrollOptionValueProp = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={6}>
+          <Cell columns={6} data-testid="select">
             <Select
               onChange={setOption}
               value={option}
               defaultScrollOptionValue={defaultOption?.value}
             />
           </Cell>
-          <Cell columns={6} align="middle">
+          <Cell columns={6} align="middle" data-testid="value">
             {option?.value}
           </Cell>
         </Row>

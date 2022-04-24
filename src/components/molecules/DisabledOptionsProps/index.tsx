@@ -22,7 +22,7 @@ const DisabledOptionsProps = () => {
   };
 
   return (
-    <Row>
+    <Row data-testid="disabled-options-prop">
       <Cell columns={12}>
         <Row>
           <Cell columns={12}>
@@ -40,7 +40,7 @@ const DisabledOptionsProps = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={9} align="middle">
+          <Cell columns={9} align="middle" data-testid="disable-select">
             <Select
               disabledOptions={disabledOptions}
               onChange={setDisabledOption}
@@ -49,6 +49,7 @@ const DisabledOptionsProps = () => {
           </Cell>
           <Cell columns={3} align="middle">
             <Button
+              data-testid="add-disable-option-btn"
               raised
               onClick={() => addHideOption()}
               disabled={!disabledOption}
@@ -89,14 +90,14 @@ const DisabledOptionsProps = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={6}>
+          <Cell columns={6} data-testid="select">
             <Select
               onChange={setOption}
               value={option}
               disabledOptions={disabledOptions}
             />
           </Cell>
-          <Cell columns={6} align="middle">
+          <Cell columns={6} align="middle" data-testid="value">
             {option?.value}
           </Cell>
         </Row>

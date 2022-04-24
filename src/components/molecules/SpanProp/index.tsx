@@ -9,7 +9,7 @@ const SpanProp = () => {
   const [span, setSpan] = useState<number>(30);
 
   return (
-    <Row>
+    <Row data-testid="span-prop">
       <Cell columns={12}>
         <Row>
           <Cell columns={12}>
@@ -25,6 +25,7 @@ const SpanProp = () => {
           <Cell columns={12} align="middle">
             <TextField label="Minutes Span">
               <Input
+                data-testid="input"
                 type="number"
                 min={1}
                 value={span || 1}
@@ -46,10 +47,10 @@ const SpanProp = () => {
               </Cell>
             </Row>
             <Row>
-              <Cell columns={6}>
+              <Cell columns={6} data-testid="select">
                 <Select onChange={setOption} value={option} span={span || 1} />
               </Cell>
-              <Cell columns={6} align="middle">
+              <Cell columns={6} align="middle" data-testid="value">
                 {option?.value}
               </Cell>
             </Row>

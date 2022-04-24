@@ -9,7 +9,7 @@ const HourLimitProp = () => {
   const [hourLimit, setHourLimit] = useState<number>(24);
 
   return (
-    <Row>
+    <Row data-testid="hour-limit-prop">
       <Cell columns={12}>
         <Row>
           <Cell columns={12}>
@@ -25,6 +25,7 @@ const HourLimitProp = () => {
           <Cell columns={12} align="middle">
             <TextField label="Hour Limit">
               <Input
+                data-testid="input"
                 type="number"
                 min={1}
                 value={hourLimit || 1}
@@ -48,14 +49,14 @@ const HourLimitProp = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={6}>
+          <Cell columns={6} data-testid="select">
             <Select
               onChange={setOption}
               value={option}
               hourLimit={hourLimit || 1}
             />
           </Cell>
-          <Cell columns={6} align="middle">
+          <Cell columns={6} align="middle" data-testid="value">
             {option?.value}
           </Cell>
         </Row>
