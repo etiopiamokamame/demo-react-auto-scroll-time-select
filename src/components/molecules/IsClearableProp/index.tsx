@@ -9,7 +9,7 @@ const IsClearableProp = () => {
   const [isClearable, setIsClearable] = useState<boolean>(true);
 
   return (
-    <Row>
+    <Row data-testid="is-clearable-prop">
       <Cell columns={12}>
         <Row>
           <Cell columns={12}>
@@ -34,6 +34,7 @@ const IsClearableProp = () => {
             </Radio>
             <Radio label="Is Not Clearable" key="false">
               <NativeRadioControl
+                data-testid="unclearable"
                 name="isClearable"
                 checked={!isClearable}
                 onChange={() => setIsClearable(false)}
@@ -56,12 +57,12 @@ const IsClearableProp = () => {
         <Row>
           <Cell columns={6}>
             <Select
-              key={String(isClearable)}
+              data-testid="select"
               isClearable={isClearable}
               onChange={setOption}
             />
           </Cell>
-          <Cell columns={6} align="middle">
+          <Cell columns={6} align="middle" data-testid="value">
             {option?.value}
           </Cell>
         </Row>

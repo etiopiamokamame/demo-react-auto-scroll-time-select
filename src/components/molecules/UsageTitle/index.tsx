@@ -4,7 +4,7 @@ import { Headline2 } from "@material/react-typography";
 
 const UsageTitle = () => {
   return (
-    <Row>
+    <Row data-testid="usage-title">
       <Cell columns={12}>
         <Headline2>Usage</Headline2>
       </Cell>

@@ -7,7 +7,7 @@ const DefaultProp = () => {
   const [option, setOption] = useState<OptionType | null>();
 
   return (
-    <Row>
+    <Row data-testid="default-prop">
       <Cell columns={12}>
         <Row>
           <Cell columns={12}>
@@ -24,9 +24,14 @@ const DefaultProp = () => {
         </Row>
         <Row>
           <Cell columns={6}>
-            <Select onChange={setOption} value={option} />
+            <Select
+              data-testid="select"
+              onChange={setOption}
+              value={option}
+              menuPortalTarget={document.body}
+            />
           </Cell>
-          <Cell columns={6} align="middle">
+          <Cell columns={6} align="middle" data-testid="value">
             {option?.value}
           </Cell>
         </Row>

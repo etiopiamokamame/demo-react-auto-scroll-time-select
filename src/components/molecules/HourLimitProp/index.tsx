@@ -6,10 +6,10 @@ import Select, { OptionType } from "react-auto-scroll-time-select";
 
 const HourLimitProp = () => {
   const [option, setOption] = useState<OptionType | null>();
-  const [hourLimit, setHourLimit] = useState<number>(24);
+  const [hourLimit, setHourLimit] = useState<number | undefined>(24);
 
   return (
-    <Row>
+    <Row data-testid="hour-limit-prop">
       <Cell columns={12}>
         <Row>
           <Cell columns={12}>
@@ -25,11 +25,15 @@ const HourLimitProp = () => {
           <Cell columns={12} align="middle">
             <TextField label="Hour Limit">
               <Input
+                data-testid="input"
                 type="number"
-                min={1}
-                value={hourLimit || 1}
+                value={hourLimit}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setHourLimit(parseInt(e.currentTarget.value))
+                  setHourLimit(
+                    e.currentTarget.value
+                      ? parseInt(e.currentTarget.value)
+                      : undefined
+                  )
                 }
               />
             </TextField>
@@ -50,12 +54,13 @@ const HourLimitProp = () => {
         <Row>
           <Cell columns={6}>
             <Select
+              data-testid="select"
               onChange={setOption}
               value={option}
-              hourLimit={hourLimit || 1}
+              hourLimit={hourLimit}
             />
           </Cell>
-          <Cell columns={6} align="middle">
+          <Cell columns={6} align="middle" data-testid="value">
             {option?.value}
           </Cell>
         </Row>

@@ -18,7 +18,9 @@ const App = () => {
     <div>
       <GlobalHeader />
 
-      <TopAppBarFixedAdjust>
+      <TopAppBarFixedAdjust />
+
+      <div className="container">
         <Grid>
           <UsageTitle />
           <DefaultProp />
@@ -31,7 +33,7 @@ const App = () => {
           <DisabledOptionsProps />
           <StartTimeProps />
         </Grid>
-      </TopAppBarFixedAdjust>
+      </div>
     </div>
   );
 };
