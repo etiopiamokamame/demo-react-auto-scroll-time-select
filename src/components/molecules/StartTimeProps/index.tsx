@@ -8,7 +8,7 @@ const StartTimeProps = () => {
   const [startTimeOption, setStartTimeOption] = useState<OptionType | null>();
 
   return (
-    <Row>
+    <Row data-testid="start-time-prop">
       <Cell columns={12}>
         <Row>
           <Cell columns={12}>
@@ -21,7 +21,7 @@ const StartTimeProps = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={9} align="middle">
+          <Cell columns={9} align="middle" data-testid="start-time-select">
             <Select onChange={setStartTimeOption} value={startTimeOption} />
           </Cell>
         </Row>
@@ -38,14 +38,14 @@ const StartTimeProps = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={6}>
+          <Cell columns={6} data-testid="select">
             <Select
               onChange={setOption}
               value={option}
               startTime={startTimeOption?.value}
             />
           </Cell>
-          <Cell columns={6} align="middle">
+          <Cell columns={6} align="middle" data-testid="value">
             {option?.value}
           </Cell>
         </Row>

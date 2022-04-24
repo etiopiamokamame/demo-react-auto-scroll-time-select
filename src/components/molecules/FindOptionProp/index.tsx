@@ -25,7 +25,7 @@ const FindOptionProp = () => {
   const [version, setVesion] = useState<number>(0);
 
   return (
-    <Row>
+    <Row data-testid="find-option-prop">
       <Cell columns={12}>
         <Row>
           <Cell columns={12}>
@@ -47,14 +47,15 @@ const FindOptionProp = () => {
               style={{ width: "100%" }}
             >
               <Input
+                data-testid="input"
                 isValid={inputValid}
                 rows={13}
                 value={findOption}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   const value = e.currentTarget.value;
                   try {
-                    setInputValid(true);
                     eval(value)({ value: "00:00", label: "00:00" }, "00:00");
+                    setInputValid(true);
                   } catch {
                     setInputValid(false);
                   } finally {
@@ -79,7 +80,7 @@ const FindOptionProp = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={6}>
+          <Cell columns={6} data-testid="select">
             <Select
               key={version}
               onChange={setOption}
@@ -87,7 +88,7 @@ const FindOptionProp = () => {
               findOption={(option, input) => eval(findOption)(option, input)}
             />
           </Cell>
-          <Cell columns={6} align="middle">
+          <Cell columns={6} align="middle" data-testid="value">
             {option?.value}
           </Cell>
         </Row>

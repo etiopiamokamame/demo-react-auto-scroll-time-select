@@ -22,7 +22,7 @@ const HideOptionsProps = () => {
   };
 
   return (
-    <Row>
+    <Row data-testid="hide-options-prop">
       <Cell columns={12}>
         <Row>
           <Cell columns={12}>
@@ -40,7 +40,7 @@ const HideOptionsProps = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={9} align="middle">
+          <Cell columns={9} align="middle" data-testid="hide-select">
             <Select
               hideOptions={hideOptions}
               onChange={setHideOption}
@@ -49,6 +49,7 @@ const HideOptionsProps = () => {
           </Cell>
           <Cell columns={3} align="middle">
             <Button
+              data-testid="add-hide-option-btn"
               raised
               onClick={() => addHideOption()}
               disabled={!hideOption}
@@ -89,14 +90,14 @@ const HideOptionsProps = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={6}>
+          <Cell columns={6} data-testid="select">
             <Select
               onChange={setOption}
               value={option}
               hideOptions={hideOptions}
             />
           </Cell>
-          <Cell columns={6} align="middle">
+          <Cell columns={6} align="middle" data-testid="value">
             {option?.value}
           </Cell>
         </Row>
