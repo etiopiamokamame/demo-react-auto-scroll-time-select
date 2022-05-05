@@ -1,20 +1,13 @@
 {
   "files": {
-    "main.css": "/demo-react-auto-scroll-time-select/static/css/main.fdae0514.chunk.css",
-    "main.js": "/demo-react-auto-scroll-time-select/static/js/main.343accc0.chunk.js",
-    "main.js.map": "/demo-react-auto-scroll-time-select/static/js/main.343accc0.chunk.js.map",
-    "runtime-main.js": "/demo-react-auto-scroll-time-select/static/js/runtime-main.bc3018f7.js",
-    "runtime-main.js.map": "/demo-react-auto-scroll-time-select/static/js/runtime-main.bc3018f7.js.map",
-    "static/js/2.ad27776e.chunk.js": "/demo-react-auto-scroll-time-select/static/js/2.ad27776e.chunk.js",
-    "static/js/2.ad27776e.chunk.js.map": "/demo-react-auto-scroll-time-select/static/js/2.ad27776e.chunk.js.map",
+    "main.css": "/demo-react-auto-scroll-time-select/static/css/main.4bf81dc2.css",
+    "main.js": "/demo-react-auto-scroll-time-select/static/js/main.73f5f6fe.js",
     "index.html": "/demo-react-auto-scroll-time-select/index.html",
-    "static/css/main.fdae0514.chunk.css.map": "/demo-react-auto-scroll-time-select/static/css/main.fdae0514.chunk.css.map",
-    "static/js/2.ad27776e.chunk.js.LICENSE.txt": "/demo-react-auto-scroll-time-select/static/js/2.ad27776e.chunk.js.LICENSE.txt"
+    "main.4bf81dc2.css.map": "/demo-react-auto-scroll-time-select/static/css/main.4bf81dc2.css.map",
+    "main.73f5f6fe.js.map": "/demo-react-auto-scroll-time-select/static/js/main.73f5f6fe.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.bc3018f7.js",
-    "static/js/2.ad27776e.chunk.js",
-    "static/css/main.fdae0514.chunk.css",
-    "static/js/main.343accc0.chunk.js"
+    "static/css/main.4bf81dc2.css",
+    "static/js/main.73f5f6fe.js"
   ]
 }
