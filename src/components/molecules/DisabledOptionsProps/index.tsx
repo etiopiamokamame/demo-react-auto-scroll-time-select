@@ -42,6 +42,7 @@ const DisabledOptionsProps = () => {
         <Row>
           <Cell columns={9} align="middle" data-testid="disable-select">
             <Select
+              data-testid="disable-select"
               disabledOptions={disabledOptions}
               onChange={setDisabledOption}
               value={disabledOption}
@@ -92,6 +93,7 @@ const DisabledOptionsProps = () => {
         <Row>
           <Cell columns={6} data-testid="select">
             <Select
+              data-testid="select"
               onChange={setOption}
               value={option}
               disabledOptions={disabledOptions}

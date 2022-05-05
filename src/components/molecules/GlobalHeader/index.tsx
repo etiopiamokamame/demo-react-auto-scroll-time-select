@@ -7,7 +7,7 @@ import TopAppBar, {
 
 const GlobalHeader = () => {
   return (
-    <TopAppBar>
+    <TopAppBar fixed>
       <TopAppBarRow>
         <TopAppBarSection align="start">
           <TopAppBarTitle>React Auto Scroll Time Select</TopAppBarTitle>

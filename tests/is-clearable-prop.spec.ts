@@ -20,10 +20,8 @@ test.describe("is clearable prop", () => {
   }
 
   async function getClearSelectContent(page: Page) {
-    const mainContent = await getMainContent(page);
-    return mainContent.$(
-      "[data-testid='select'] > div > div > div:nth-child(2)"
-    );
+    const selectContent = await getSelectContent(page);
+    return selectContent.$(".react-auto-scroll-time-select__clear-value");
   }
 
   async function getValueContent(page: Page) {
@@ -47,7 +45,9 @@ test.describe("is clearable prop", () => {
     const unclearableContent = await getUnclearableContent(page);
     const clearSelectContent = await getClearSelectContent(page);
 
-    expect(await (await getClearSelectContent(page)).innerText()).toBe("×");
+    expect(
+      await selectContent.$$(".react-auto-scroll-time-select__clear-value")
+    ).not.toEqual([]);
 
     await selectContent.click();
     await page.keyboard.type("01:00");
@@ -56,12 +56,14 @@ test.describe("is clearable prop", () => {
     expect(await valueContent.innerText()).toBe("01:00");
 
     await clearSelectContent.click();
-    await selectContent.press("Tab");
+    await selectContent.press("Escape");
 
     expect(await valueContent.innerText()).toBe("");
 
     await unclearableContent.check();
 
-    expect(await (await getClearSelectContent(page)).innerText()).toBe("");
+    expect(
+      await selectContent.$$(".react-auto-scroll-time-select__clear-value")
+    ).toEqual([]);
   });
 });

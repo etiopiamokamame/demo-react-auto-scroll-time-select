@@ -83,6 +83,6 @@ test.describe("default prop", () => {
     await page.keyboard.type("abc");
     await selectContent.press("Enter");
 
-    expect(await valueContent.innerText()).toBe("00:00");
+    expect(await valueContent.innerText()).toBe("");
   });
 });

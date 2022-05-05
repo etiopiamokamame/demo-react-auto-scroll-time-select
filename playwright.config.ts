@@ -1,21 +1,22 @@
 import { PlaywrightTestConfig, devices } from "@playwright/test";
 
 const config: PlaywrightTestConfig = {
+  workers: 1,
   use: {
     headless: true,
-    // launchOptions: {
-    //   slowMo: 1000,
-    // },
+    launchOptions: {
+      slowMo: 100,
+    },
   },
   projects: [
     {
       name: "Chromium",
       use: { browserName: "chromium" },
     },
-    // {
-    //   name: "Firefox",
-    //   use: { browserName: "firefox" },
-    // },
+    {
+      name: "Firefox",
+      use: { browserName: "firefox" },
+    },
     {
       name: "WebKit",
       use: { browserName: "webkit" },

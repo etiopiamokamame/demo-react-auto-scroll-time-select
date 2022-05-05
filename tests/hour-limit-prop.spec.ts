@@ -60,6 +60,6 @@ test.describe("hour limit prop", () => {
     await selectContent.click();
     await selectContent.press("Enter");
 
-    expect(await valueContent.innerText()).toBe("00:00");
+    expect(await valueContent.innerText()).toBe("");
   });
 });

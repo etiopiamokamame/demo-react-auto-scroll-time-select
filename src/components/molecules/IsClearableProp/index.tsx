@@ -57,7 +57,7 @@ const IsClearableProp = () => {
         <Row>
           <Cell columns={6} data-testid="select">
             <Select
-              key={String(isClearable)}
+              data-testid="select"
               isClearable={isClearable}
               onChange={setOption}
             />

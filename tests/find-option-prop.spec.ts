@@ -20,10 +20,8 @@ test.describe("find option prop", () => {
   }
 
   async function getClearSelectContent(page: Page) {
-    const mainContent = await getMainContent(page);
-    return mainContent.$(
-      "[data-testid='select'] > div > div > div:nth-child(2)"
-    );
+    const selectContent = await getSelectContent(page);
+    return selectContent.$(".react-auto-scroll-time-select__clear-value");
   }
 
   async function getValueContent(page: Page) {
@@ -88,13 +86,13 @@ test.describe("find option prop", () => {
 
     expect(await valueContent.innerText()).toBe("13:30");
 
-    await clearSelectContent.click();
     await inputContent.fill(`
       (({ value }) => {
         return value.indexOf("15:30") > -1;
       })
     `);
 
+    await clearSelectContent.click();
     await selectContent.click();
     await page.keyboard.type("14:30");
     await selectContent.press("Enter");

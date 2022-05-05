@@ -42,6 +42,7 @@ const HideOptionsProps = () => {
         <Row>
           <Cell columns={9} align="middle" data-testid="hide-select">
             <Select
+              data-testid="hide-select"
               hideOptions={hideOptions}
               onChange={setHideOption}
               value={hideOption}
@@ -92,6 +93,7 @@ const HideOptionsProps = () => {
         <Row>
           <Cell columns={6} data-testid="select">
             <Select
+              data-testid="select"
               onChange={setOption}
               value={option}
               hideOptions={hideOptions}

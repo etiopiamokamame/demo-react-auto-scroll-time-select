@@ -20,10 +20,8 @@ test.describe("default scroll option value prop", () => {
   }
 
   async function getClearSelectContent(page: Page) {
-    const mainContent = await getMainContent(page);
-    return mainContent.$(
-      "[data-testid='select'] > div > div > div:nth-child(2)"
-    );
+    const selectContent = await getSelectContent(page);
+    return selectContent.$(".react-auto-scroll-time-select__clear-value");
   }
 
   async function getValueContent(page: Page) {
@@ -49,10 +47,9 @@ test.describe("default scroll option value prop", () => {
 
     await selectContent.click();
     await selectContent.press("Enter");
-    expect(await valueContent.innerText()).toBe("00:00");
+    expect(await valueContent.innerText()).toBe("");
 
     await clearSelectContent.click();
-
     await defaultSelectContent.click();
     await page.keyboard.type("15:30");
     await defaultSelectContent.press("Enter");
@@ -60,6 +57,12 @@ test.describe("default scroll option value prop", () => {
     await selectContent.click();
     await selectContent.press("Enter");
 
-    // expect(await valueContent.innerText()).toBe("15:30");
+    expect(await valueContent.innerText()).toBe("15:30");
+
+    await clearSelectContent.click();
+    await page.keyboard.type("aaa");
+    await selectContent.press("Tab");
+
+    expect(await valueContent.innerText()).toBe("");
   });
 });

@@ -38,6 +38,7 @@ test.describe("disabled options prop", () => {
     const startTimeSelectContent = await getStartTimeSelectContent(page);
 
     await selectContent.click();
+    await selectContent.press("ArrowDown");
     await selectContent.press("Enter");
     expect(await valueContent.innerText()).toBe("00:00");
 
@@ -46,6 +47,7 @@ test.describe("disabled options prop", () => {
     await startTimeSelectContent.press("Enter");
 
     await selectContent.click();
+    await selectContent.press("ArrowDown");
     await selectContent.press("Enter");
     expect(await valueContent.innerText()).toBe("10:00");
   });

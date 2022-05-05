@@ -26,8 +26,12 @@ const DefaultScrollOptionValueProp = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={12} align="middle" data-testid="default-select">
-            <Select onChange={setDefaultOption} value={defaultOption} />
+          <Cell columns={12} align="middle">
+            <Select
+              data-testid="default-select"
+              onChange={setDefaultOption}
+              value={defaultOption}
+            />
           </Cell>
         </Row>
         <Row>
@@ -45,6 +49,7 @@ const DefaultScrollOptionValueProp = () => {
         <Row>
           <Cell columns={6} data-testid="select">
             <Select
+              data-testid="select"
               onChange={setOption}
               value={option}
               defaultScrollOptionValue={defaultOption?.value}

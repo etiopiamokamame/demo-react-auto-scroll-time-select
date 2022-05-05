@@ -8,21 +8,27 @@ import Select, { OptionType } from "react-auto-scroll-time-select";
 
 const FindOptionProp = () => {
   const [option, setOption] = useState<OptionType | null>();
-  const [findOption, setFindOption] = useState<string>(`(({ value }, input) => {
-  let inputValue = input || "";
-
-  if (inputValue.indexOf(":") < 0) {
-    if (inputValue.length <= 2) {
-      return value.indexOf(inputValue + ":") > -1;
+  const [findOption, setFindOption] =
+    useState<string>(`(({ value }, inputValue) => {
+  if (inputValue) {
+    if (inputValue.indexOf(":") < 0) {
+      if (inputValue.length <= 2) {
+        return value.indexOf(inputValue + ":") > -1;
+      } else {
+        return value.replace(":", "").indexOf(inputValue) > -1;
+      }
     } else {
-      return value.replace(":", "").indexOf(inputValue) > -1;
+      return value.indexOf(inputValue) > -1;
     }
   } else {
-    return value.indexOf(inputValue) > -1;
+    return false;
   }
 })`);
   const [inputValid, setInputValid] = useState<boolean>(true);
-  const [version, setVesion] = useState<number>(0);
+
+  const selectFindOption = inputValid
+    ? { findOption: eval(findOption) }
+    : { findOption: undefined };
 
   return (
     <Row data-testid="find-option-prop">
@@ -49,18 +55,22 @@ const FindOptionProp = () => {
               <Input
                 data-testid="input"
                 isValid={inputValid}
-                rows={13}
+                rows={15}
                 value={findOption}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   const value = e.currentTarget.value;
-                  try {
-                    eval(value)({ value: "00:00", label: "00:00" }, "00:00");
+                  if (value) {
+                    try {
+                      eval(value)({ value: "00:00", label: "00:00" }, "00:00");
+                      setInputValid(true);
+                    } catch {
+                      setInputValid(false);
+                    } finally {
+                      setFindOption(value);
+                    }
+                  } else {
                     setInputValid(true);
-                  } catch {
-                    setInputValid(false);
-                  } finally {
-                    setVesion(version + 1);
-                    setFindOption(value);
+                    setFindOption("");
                   }
                 }}
               />
@@ -82,10 +92,10 @@ const FindOptionProp = () => {
         <Row>
           <Cell columns={6} data-testid="select">
             <Select
-              key={version}
+              data-testid="select"
               onChange={setOption}
               value={option}
-              findOption={(option, input) => eval(findOption)(option, input)}
+              {...selectFindOption}
             />
           </Cell>
           <Cell columns={6} align="middle" data-testid="value">

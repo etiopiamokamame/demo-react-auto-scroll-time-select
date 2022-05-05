@@ -21,8 +21,12 @@ const StartTimeProps = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={9} align="middle" data-testid="start-time-select">
-            <Select onChange={setStartTimeOption} value={startTimeOption} />
+          <Cell columns={9} align="middle">
+            <Select
+              data-testid="start-time-select"
+              onChange={setStartTimeOption}
+              value={startTimeOption}
+            />
           </Cell>
         </Row>
         <Row>
@@ -40,6 +44,7 @@ const StartTimeProps = () => {
         <Row>
           <Cell columns={6} data-testid="select">
             <Select
+              data-testid="select"
               onChange={setOption}
               value={option}
               startTime={startTimeOption?.value}

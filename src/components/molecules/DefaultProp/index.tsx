@@ -23,8 +23,13 @@ const DefaultProp = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={6} data-testid="select">
-            <Select onChange={setOption} value={option} />
+          <Cell columns={6}>
+            <Select
+              data-testid="select"
+              onChange={setOption}
+              value={option}
+              menuPortalTarget={document.body}
+            />
           </Cell>
           <Cell columns={6} align="middle" data-testid="value">
             {option?.value}

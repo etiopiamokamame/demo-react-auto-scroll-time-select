@@ -40,7 +40,7 @@ test.describe("span prop", () => {
     await selectContent.press("ArrowDown");
     await selectContent.press("Enter");
 
-    expect(await valueContent.innerText()).toBe("00:30");
+    expect(await valueContent.innerText()).toBe("00:00");
 
     const inputContent = await getInputContent(page);
     await inputContent.fill("15");
@@ -49,7 +49,7 @@ test.describe("span prop", () => {
     await selectContent.press("ArrowDown");
     await selectContent.press("Enter");
 
-    expect(await valueContent.innerText()).toBe("00:45");
+    expect(await valueContent.innerText()).toBe("00:15");
 
     await inputContent.fill("1");
 
@@ -57,6 +57,6 @@ test.describe("span prop", () => {
     await selectContent.press("ArrowDown");
     await selectContent.press("Enter");
 
-    expect(await valueContent.innerText()).toBe("00:46");
+    expect(await valueContent.innerText()).toBe("00:16");
   });
 });

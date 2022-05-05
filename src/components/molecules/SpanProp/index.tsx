@@ -6,7 +6,7 @@ import Select, { OptionType } from "react-auto-scroll-time-select";
 
 const SpanProp = () => {
   const [option, setOption] = useState<OptionType | null>();
-  const [span, setSpan] = useState<number>(30);
+  const [span, setSpan] = useState<number | undefined>(30);
 
   return (
     <Row data-testid="span-prop">
@@ -27,10 +27,13 @@ const SpanProp = () => {
               <Input
                 data-testid="input"
                 type="number"
-                min={1}
-                value={span || 1}
+                value={span}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setSpan(parseInt(e.currentTarget.value))
+                  setSpan(
+                    e.currentTarget.value
+                      ? parseInt(e.currentTarget.value)
+                      : undefined
+                  )
                 }
               />
             </TextField>
@@ -47,8 +50,13 @@ const SpanProp = () => {
               </Cell>
             </Row>
             <Row>
-              <Cell columns={6} data-testid="select">
-                <Select onChange={setOption} value={option} span={span || 1} />
+              <Cell columns={6}>
+                <Select
+                  data-testid="select"
+                  onChange={setOption}
+                  value={option}
+                  span={span}
+                />
               </Cell>
               <Cell columns={6} align="middle" data-testid="value">
                 {option?.value}
