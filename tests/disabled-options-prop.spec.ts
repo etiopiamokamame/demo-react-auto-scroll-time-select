@@ -37,7 +37,7 @@ test.describe("disabled options prop", () => {
     expect(await titleContent.innerText()).toBe("Disabled Options");
   });
 
-  test("disabledOptionsで指定の選択肢を非表示にできること", async ({
+  test("disabledOptionsで指定の選択肢を非活性にできること", async ({
     page,
   }) => {
     const disableSelectContent = await getDisableSelectContent(page);
@@ -64,6 +64,7 @@ test.describe("disabled options prop", () => {
 
     await selectContent.click();
     await selectContent.press("ArrowDown");
+    await selectContent.press("Enter");
     await selectContent.press("Tab");
     expect(await valueContent.innerText()).toBe("01:00");
 

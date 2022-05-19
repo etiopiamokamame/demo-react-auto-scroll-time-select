@@ -15,15 +15,15 @@ const DefaultProp = () => {
           </Cell>
         </Row>
         <Row>
-          <Cell columns={6}>
+          <Cell desktopColumns={6} phoneColumns={2}>
             <Subtitle2>Form</Subtitle2>
           </Cell>
-          <Cell columns={6}>
+          <Cell desktopColumns={6} phoneColumns={2}>
             <Subtitle2>Value</Subtitle2>
           </Cell>
         </Row>
         <Row>
-          <Cell columns={6}>
+          <Cell desktopColumns={6} phoneColumns={2}>
             <Select
               data-testid="select"
               onChange={setOption}
@@ -31,7 +31,12 @@ const DefaultProp = () => {
               menuPortalTarget={document.body}
             />
           </Cell>
-          <Cell columns={6} align="middle" data-testid="value">
+          <Cell
+            desktopColumns={6}
+            phoneColumns={2}
+            align="middle"
+            data-testid="value"
+          >
             {option?.value}
           </Cell>
         </Row>
