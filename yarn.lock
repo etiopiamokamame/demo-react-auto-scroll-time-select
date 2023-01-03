@@ -8614,10 +8614,10 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
-react-auto-scroll-time-select@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/react-auto-scroll-time-select/-/react-auto-scroll-time-select-3.0.3.tgz#968ae9b584ae4768e4996b993e0fcfb8c4ed7425"
-  integrity sha512-93BE+IDsyab3zVtwIagrZoqOY4s8YZWyIIN3G2EwMSgZUG4bJNSionWXoTT0unYiJHNP7/HfdytZrFZ/LuKJog==
+react-auto-scroll-time-select@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/react-auto-scroll-time-select/-/react-auto-scroll-time-select-3.0.4.tgz#6d1a88c6a4b18e2e01d94bf0c90ea7454b20d113"
+  integrity sha512-vQlajX+nckdngm7d9M917P4Szb1FLIbuwPxV2xHPqyY9jRPS9i4fnduarom0IiHtmQl/r43U2yk4Q0x5J3RWSQ==
 
 react-dev-utils@^12.0.1:
   version "12.0.1"
